@@ -1,17 +1,5 @@
 ---
-title: My Site
+title: zzy
+description: zzy 的个人 IO 页面，聚焦 ROS、STM32 单片机、机器人系统与嵌入式开发。
 toc: false
 ---
-
-This is the landing page.
-
-## Explore
-
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Site.Title }}</title>
+    <meta
+      name="description"
+      content="{{ with .Description }}{{ . }}{{ else }}zzy 的个人 IO 页面，聚焦 ROS、STM32 单片机、机器人系统与嵌入式开发。{{ end }}"
+    />
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta
+      property="og:description"
+      content="{{ with .Description }}{{ . }}{{ else }}zzy 的个人 IO 页面，聚焦 ROS、STM32 单片机、机器人系统与嵌入式开发。{{ end }}"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ "css/zzy-landing.css" | relURL }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="bg-grid"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">zzy</span>
+          <span class="brand-dot">.io</span>
+        </a>
+        <nav class="topnav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#stack">Stack</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Robotics / Embedded / Builder</p>
+            <h1>zzy</h1>
+            <p class="hero-text">
+              正在把 <strong>ROS</strong>、<strong>STM32</strong> 和一堆动手实验，
+              慢慢打磨成真正能跑起来的机器人系统。
+            </p>
+            <p class="hero-subtext">
+              我偏爱那种从底层驱动、节点通信到系统联调都能摸得到的开发过程。
+              比起空谈概念，我更喜欢让板子亮起来、让数据流起来、让控制链路稳定下来。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#focus">查看方向</a>
+              <a class="button button-ghost" href="#about">认识我</a>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="signal-card">
+              <p class="signal-label">Current Mode</p>
+              <p class="signal-value">Learning by Building</p>
+              <div class="signal-bars" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="stat-grid">
+              <article class="stat-card">
+                <span class="stat-index">01</span>
+                <h2>ROS</h2>
+                <p>节点通信、话题发布订阅、仿真与系统拆分。</p>
+              </article>
+              <article class="stat-card">
+                <span class="stat-index">02</span>
+                <h2>STM32</h2>
+                <p>外设驱动、串口调试、时序控制和硬件联调。</p>
+              </article>
+              <article class="stat-card">
+                <span class="stat-index">03</span>
+                <h2>Workflow</h2>
+                <p>Linux、C/C++、Python，以及持续记录问题与迭代。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="intro-strip" id="about">
+          <div class="intro-heading">
+            <p class="section-kicker">About</p>
+            <h2>我更像一个正在成型中的工程实践者。</h2>
+          </div>
+          <div class="intro-body">
+            <p>
+              目前的兴趣重心在机器人基础软件、嵌入式控制和真实设备调试。
+              我喜欢把一个问题拆成“感知什么、控制什么、如何通信、怎么验证”四个层面，再一点点把它做通。
+            </p>
+            <p>
+              所以这个页面没有堆太多空泛介绍，它更像一张个人状态面板：
+              记录我在学什么、偏好什么、以及接下来想把哪些能力继续做深。
+            </p>
+          </div>
+        </section>
+
+        <section class="focus-grid" id="focus">
+          <article class="panel focus-card reveal">
+            <p class="section-kicker">Focus 01</p>
+            <h3>机器人软件链路</h3>
+            <p>
+              关注 ROS 下的节点组织、消息流转、调试路径和模块化拆分，
+              让系统不是“能启动”，而是“能定位问题、能继续扩展”。
+            </p>
+          </article>
+          <article class="panel focus-card reveal">
+            <p class="section-kicker">Focus 02</p>
+            <h3>嵌入式控制</h3>
+            <p>
+              从 STM32 外设、通信接口到执行器控制，我对接近硬件的部分有明显兴趣，
+              尤其是把控制逻辑真正落到板级实现的过程。
+            </p>
+          </article>
+          <article class="panel focus-card reveal">
+            <p class="section-kicker">Focus 03</p>
+            <h3>从想法到原型</h3>
+            <p>
+              我倾向于快速搭建最小可运行版本，再通过日志、波形、串口数据和现场表现反复修正，
+              让项目在迭代里变得可靠。
+            </p>
+          </article>
+        </section>
+
+        <section class="stack panel" id="stack">
+          <div class="stack-copy">
+            <p class="section-kicker">Stack</p>
+            <h2>当前在持续积累的技术栈</h2>
+            <p>
+              除了 ROS 和 STM32，我也在围绕机器人系统常见链路补齐工具与基础能力，
+              让软件、硬件和调试方法能串成一个完整闭环。
+            </p>
+          </div>
+          <div class="chip-cloud" aria-label="Technology tags">
+            <span>ROS</span>
+            <span>STM32</span>
+            <span>C/C++</span>
+            <span>Python</span>
+            <span>Linux</span>
+            <span>UART / I2C / SPI</span>
+            <span>PID Control</span>
+            <span>Gazebo</span>
+            <span>RViz</span>
+            <span>Git</span>
+            <span>Serial Debugging</span>
+            <span>System Integration</span>
+          </div>
+        </section>
+
+        <section class="journey">
+          <article class="journey-card panel">
+            <p class="section-kicker">Now</p>
+            <h3>把基础做扎实</h3>
+            <p>
+              先把通信、控制、调试、工程结构这些核心能力练稳，
+              再把它们组合成更复杂的机器人原型。
+            </p>
+          </article>
+          <article class="journey-card panel">
+            <p class="section-kicker">Next</p>
+            <h3>做更多完整项目</h3>
+            <p>
+              目标不是单点会用，而是能独立串起一个从硬件到软件、从实验到展示的完整小系统。
+            </p>
+          </article>
+          <article class="journey-quote">
+            <p>“Build slowly. Debug precisely. Let the system speak.”</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
